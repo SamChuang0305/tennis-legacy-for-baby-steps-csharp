@@ -28,17 +28,17 @@ namespace Tennis
 
         public string Score()
         {
-            if (_firstPlayerScoreTimes == _secondPlayerScoreTimes)
+            if (IsSameScore())
             {
-                if (_firstPlayerScoreTimes >= 3)
+                if (IsDeuce())
                 {
                     return _deuce;
                 }
-                return scoreLookup[_firstPlayerScoreTimes] + " " + _all;
+                return SameScore();
             }
-            if (_firstPlayerScoreTimes < 4 && _secondPlayerScoreTimes < 4)
+            if (IsLookupScore())
             {
-                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
+                return LookupScore();
             }
             if (_firstPlayerScoreTimes == 4 && _secondPlayerScoreTimes == 3)
             {
@@ -57,6 +57,31 @@ namespace Tennis
                 return _secondPlayerName + " win";
             }
             return null;
+        }
+
+        private bool IsLookupScore()
+        {
+            return _firstPlayerScoreTimes < 4 && _secondPlayerScoreTimes < 4;
+        }
+
+        private bool IsSameScore()
+        {
+            return _firstPlayerScoreTimes == _secondPlayerScoreTimes;
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScoreTimes >= 3;
+        }
+
+        private string SameScore()
+        {
+            return scoreLookup[_firstPlayerScoreTimes] + " " + _all;
+        }
+
+        private string LookupScore()
+        {
+            return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
         }
 
         public void firstPlayerScore()
