@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Tennis
 {
@@ -42,23 +43,12 @@ namespace Tennis
             {
                 return LookupScore();
             }
-            if (_firstPlayerScoreTimes == 4 && _secondPlayerScoreTimes == 3)
-            {
-                return GetAdvPlayerName() + " adv";
-            }
-            if (_firstPlayerScoreTimes == 3 && _secondPlayerScoreTimes == 4)
-            {
-                return GetAdvPlayerName() + " adv";
-            }
-            if (_firstPlayerScoreTimes == 5 && _secondPlayerScoreTimes == 3)
-            {
-                return GetAdvPlayerName() + " win";
-            }
-            if (_firstPlayerScoreTimes == 3 && _secondPlayerScoreTimes == 5)
-            {
-                return GetAdvPlayerName() + " win";
-            }
-            return null;
+            return string.Format("{0} {1}", GetAdvPlayerName(), IsAdv() ? "adv" : "win");
+        }
+
+        private bool IsAdv()
+        {
+            return Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1;
         }
 
         private string GetAdvPlayerName()
