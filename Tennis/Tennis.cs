@@ -10,11 +10,6 @@ namespace Tennis
         private string _firstPlayerName;
         private string _secondPlayerName;
 
-        private string _all = "all";
-        private string _deuce = "deuce";
-
-        private string _advPlayer;
-
         private Dictionary<int, string> scoreLookup = new Dictionary<int, string>
         {
             { 0, "love" },
@@ -23,26 +18,23 @@ namespace Tennis
             { 3, "forty" },
         };
 
-        public Tennis()
+        public Tennis(string _firstPlayerName, string _secondPlayerName)
         {
-            _firstPlayerName = "Joey";
-            _secondPlayerName = "Tom";
+            this._firstPlayerName = _firstPlayerName;
+            this._secondPlayerName = _secondPlayerName;
         }
 
         public string Score()
         {
-            if (IsSameScore())
-            {
-                if (IsDeuce())
-                {
-                    return _deuce;
-                }
-                return SameScore();
-            }
-            if (IsLookupScore())
-            {
-                return LookupScore();
-            }
+            return IsSameScore()
+                ? IsDeuce()
+                    ? "deuce" : SameScore()
+                : IsLookupScore()
+                    ? LookupScore() : GetAdvState();
+        }
+
+        private string GetAdvState()
+        {
             return string.Format("{0} {1}", GetAdvPlayerName(), IsAdv() ? "adv" : "win");
         }
 
@@ -73,7 +65,7 @@ namespace Tennis
 
         private string SameScore()
         {
-            return scoreLookup[_firstPlayerScoreTimes] + " " + _all;
+            return scoreLookup[_firstPlayerScoreTimes] + " all";
         }
 
         private string LookupScore()

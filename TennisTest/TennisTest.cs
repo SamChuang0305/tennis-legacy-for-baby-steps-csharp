@@ -4,12 +4,12 @@ namespace Tennis.UnitTests
 {
     public class TennisTest
     {
-        private Tennis _tennis = new Tennis();
+        private Tennis _tennis;
 
         [SetUp]
         public void Setup()
         {
-            _tennis = new Tennis();
+            _tennis = new Tennis("Joey", "Tom");
         }
 
         [TearDown]
