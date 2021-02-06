@@ -1,4 +1,6 @@
-﻿namespace Tennis
+﻿using System.Collections.Generic;
+
+namespace Tennis
 {
     public class Tennis
     {
@@ -7,13 +9,16 @@
         private string _firstPlayerName;
         private string _secondPlayerName;
 
-        private string _love;
-        private string _fifteen;
-        private string _thirty;
-        private string _forty;
-
         private string _all = "all";
         private string _deuce = "deuce";
+
+        private Dictionary<int, string> scoreLookup = new Dictionary<int, string>
+        {
+            { 0, "love" },
+            { 1, "fifteen" },
+            { 2, "thirty" },
+            { 3, "forty" },
+        };
 
         public Tennis()
         {
@@ -23,46 +28,41 @@
 
         public string Score()
         {
-            _love = "love";
-            _fifteen = "fifteen";
-            _thirty = "thirty";
-            _forty = "forty";
             if (_firstPlayerScoreTimes == 0 && _secondPlayerScoreTimes == 0)
             {
-                return _love + " " + _all;
+                return scoreLookup[_firstPlayerScoreTimes] + " " + _all;
             }
             if (_firstPlayerScoreTimes == 1 && _secondPlayerScoreTimes == 0)
             {
-                return _fifteen + " " + _love;
+                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
-
             if (_firstPlayerScoreTimes == 2 && _secondPlayerScoreTimes == 0)
             {
-                return _thirty + " " + _love;
+                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
             if (_firstPlayerScoreTimes == 3 && _secondPlayerScoreTimes == 0)
             {
-                return _forty + " " + _love;
+                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
             if (_firstPlayerScoreTimes == 0 && _secondPlayerScoreTimes == 1)
             {
-                return _love + " " + _fifteen;
+                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
             if (_firstPlayerScoreTimes == 0 && _secondPlayerScoreTimes == 2)
             {
-                return _love + " " + _thirty;
+                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
             if (_firstPlayerScoreTimes == 0 && _secondPlayerScoreTimes == 3)
             {
-                return _love + " " + _forty;
+                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
             if (_firstPlayerScoreTimes == 1 && _secondPlayerScoreTimes == 1)
             {
-                return _fifteen + " " + _all;
+                return scoreLookup[_firstPlayerScoreTimes] + " " + _all;
             }
             if (_firstPlayerScoreTimes == 2 && _secondPlayerScoreTimes == 2)
             {
-                return _thirty + " " + _all;
+                return scoreLookup[_firstPlayerScoreTimes] + " " + _all;
             }
             if (_firstPlayerScoreTimes == 3 && _secondPlayerScoreTimes == 3)
             {
