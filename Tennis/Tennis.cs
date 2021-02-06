@@ -12,6 +12,8 @@ namespace Tennis
         private string _all = "all";
         private string _deuce = "deuce";
 
+        private string _advPlayer;
+
         private Dictionary<int, string> scoreLookup = new Dictionary<int, string>
         {
             { 0, "love" },
@@ -42,21 +44,26 @@ namespace Tennis
             }
             if (_firstPlayerScoreTimes == 4 && _secondPlayerScoreTimes == 3)
             {
-                return _firstPlayerName + " adv";
+                return GetAdvPlayerName() + " adv";
             }
             if (_firstPlayerScoreTimes == 3 && _secondPlayerScoreTimes == 4)
             {
-                return _secondPlayerName + " adv";
+                return GetAdvPlayerName() + " adv";
             }
             if (_firstPlayerScoreTimes == 5 && _secondPlayerScoreTimes == 3)
             {
-                return _firstPlayerName + " win";
+                return GetAdvPlayerName() + " win";
             }
             if (_firstPlayerScoreTimes == 3 && _secondPlayerScoreTimes == 5)
             {
-                return _secondPlayerName + " win";
+                return GetAdvPlayerName() + " win";
             }
             return null;
+        }
+
+        private string GetAdvPlayerName()
+        {
+            return _firstPlayerScoreTimes > _secondPlayerScoreTimes ? _firstPlayerName : _secondPlayerName;
         }
 
         private bool IsLookupScore()
