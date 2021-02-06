@@ -36,11 +36,7 @@ namespace Tennis
                 }
                 return scoreLookup[_firstPlayerScoreTimes] + " " + _all;
             }
-            if (_firstPlayerScoreTimes < 4 && _secondPlayerScoreTimes == 0)
-            {
-                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
-            }
-            if (_firstPlayerScoreTimes == 0 && _secondPlayerScoreTimes < 4)
+            if (_firstPlayerScoreTimes < 4 && _secondPlayerScoreTimes < 4)
             {
                 return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
