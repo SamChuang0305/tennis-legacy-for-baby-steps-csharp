@@ -32,27 +32,11 @@ namespace Tennis
             {
                 return scoreLookup[_firstPlayerScoreTimes] + " " + _all;
             }
-            if (_firstPlayerScoreTimes == 1 && _secondPlayerScoreTimes == 0)
+            if (_firstPlayerScoreTimes < 4 && _secondPlayerScoreTimes == 0)
             {
                 return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
-            if (_firstPlayerScoreTimes == 2 && _secondPlayerScoreTimes == 0)
-            {
-                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
-            }
-            if (_firstPlayerScoreTimes == 3 && _secondPlayerScoreTimes == 0)
-            {
-                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
-            }
-            if (_firstPlayerScoreTimes == 0 && _secondPlayerScoreTimes == 1)
-            {
-                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
-            }
-            if (_firstPlayerScoreTimes == 0 && _secondPlayerScoreTimes == 2)
-            {
-                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
-            }
-            if (_firstPlayerScoreTimes == 0 && _secondPlayerScoreTimes == 3)
+            if (_firstPlayerScoreTimes == 0 && _secondPlayerScoreTimes < 4)
             {
                 return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
