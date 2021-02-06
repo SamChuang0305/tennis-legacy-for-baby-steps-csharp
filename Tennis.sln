@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tennis", "Tennis\Tennis.csproj", "{A8B9D52F-821A-41F7-93EE-478FC5D4EF70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisTest", "TennisTest\TennisTest.csproj", "{C5D50C06-3B21-41A9-AC9D-04CEB60FDE11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8B9D52F-821A-41F7-93EE-478FC5D4EF70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B9D52F-821A-41F7-93EE-478FC5D4EF70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B9D52F-821A-41F7-93EE-478FC5D4EF70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B9D52F-821A-41F7-93EE-478FC5D4EF70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D50C06-3B21-41A9-AC9D-04CEB60FDE11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D50C06-3B21-41A9-AC9D-04CEB60FDE11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D50C06-3B21-41A9-AC9D-04CEB60FDE11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D50C06-3B21-41A9-AC9D-04CEB60FDE11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9C7F86A-2CE6-459E-9D64-2EC33EF6DF0F}
+	EndGlobalSection
+EndGlobal
